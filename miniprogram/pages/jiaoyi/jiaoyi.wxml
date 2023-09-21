@@ -1,0 +1,20 @@
+<view class="bottom_box">
+      <view class="bottom_card" >
+            <view class="bottom_1"><image src="/images/none.png"></image><text class="word">请选择你的身份：</text>   
+            </view>
+      </view>
+      <view class="bottom_card" bindtap="go" data-go="/pages/want/want" data-status="1">
+            <view class="bottom_1">
+                  <image src="/images/want.gif"></image>
+                  <view>我想买书</view>
+            </view>
+            <image src="/images/go.png"></image>
+      </view>
+      <view class="bottom_card" bindtap="go" data-go="/pages/publish/publish" data-status="1">
+            <view class="bottom_1">
+                  <image src="/images/publish.gif"></image>
+                  <view>我想卖书</view>
+            </view>
+            <image src="/images/go.png"></image>
+      </view>
+</view>

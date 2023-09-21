@@ -1,0 +1,212 @@
+/* 导航栏布局相关 */
+.navbar {
+	width: 100%;
+	height: 90rpx;
+	/* 文本不换行 */
+	white-space: nowrap;
+	display: flex;
+	box-sizing: border-box;
+	border-bottom: 1rpx solid #eee;
+	background: #fff;
+	align-items: center;
+	/* 固定在顶部 */
+	position: fixed;
+	left: 0rpx;
+	top: 0rpx;
+}
+
+.nav-item {
+	padding-left: 25rpx;
+	padding-right: 25rpx;
+	height: 100%;
+	display: inline-block;
+	/* 普通文字大小 */
+	font-size: 28rpx;
+}
+
+.nav-text {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	letter-spacing: 4rpx;
+	box-sizing: border-box;
+	border-radius: 50rpx;
+}
+
+.tab-on {
+	color: #000080;
+	/* 选中放大 */
+	font-size: 38rpx !important;
+	font-weight: 600;
+	border-bottom: 4rpx solid #000080 !important;
+}
+
+/* 正文部分 */
+.container {
+	position: fixed;
+	width: 100%;
+	height: 90%;
+	top: 100rpx;
+	background-color: #FFF;
+}
+
+.nav_left {
+	width: 25%;
+	height: 100%;
+	background: #cfc5bb;
+	text-align: center;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.nav_left .nav_left_items {
+	height: 100rpx;
+	line-height: 100rpx;
+	font-size: 28rpx;
+}
+
+.nav_left .nav_left_items.active {
+	position: relative;
+	background: #FFF;
+	color: #000080;
+}
+
+.nav_left .nav_left_items.active::before {
+	display: inline-block;
+	width: 6rpx;
+	height: 60rpx;
+	background: #000080;
+	content: '';
+	position: absolute;
+	top: 20rpx;
+	left: 0;
+}
+
+.nav_right {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 75%;
+	height: 100%;
+}
+
+.nav_right .nav_right_items {
+	float: left;
+	width: 33.33%;
+	text-align: center;
+	padding: 30rpx 0;
+}
+
+.nav_right .nav_right_items image {
+	width: 120rpx;
+	height: 160rpx;
+}
+
+.nav_right .nav_right_items text {
+	display: block;
+	margin-top: 20rpx;
+	font-size: 28rpx;
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+
+.nocate {
+	padding: 100rpx;
+	text-align: center;
+}
+
+.nocate image {
+	width: 70rpx;
+	height: 70rpx;
+}
+
+.nocate text {
+	font-size: 28rpx;
+	display: block;
+	color: #BBB;
+}
+
+/*隐藏滚动条*/
+::-webkit-scrollbar {
+	width: 0;
+	height: 0;
+	color: transparent;
+}
+
+.topx {
+	width: 90%;
+	/* height: 700rpx; */
+	margin: 30rpx auto;
+	z-index: 1;
+	border-radius: 10rpx;
+	background-size: cover;
+}
+.list_box {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	padding: 20rpx;
+	box-sizing: border-box;
+	margin-top: 10rpx;
+}
+.list_poster {
+	width: 230rpx;
+	height: 230rpx;
+}
+
+.list_content {
+	height: 230rpx;
+	width: calc(100% - 230rpx);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	padding: 0 10rpx;
+	box-sizing: border-box;
+}
+
+.list_word {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.list_title {
+	width: 100%;
+	font-size: 32rpx;
+	letter-spacing: 3rpx;
+	line-height: 45rpx;
+}
+
+.list_author {
+	padding-top: 10rpx;
+	width: 100%;
+	font-size: 27rpx;
+	letter-spacing: 3rpx;
+	line-height: 40rpx;
+	color: rgb(129, 129, 129);
+}
+
+.list_between {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	border-bottom: 1rpx solid #eee;
+	padding-bottom: 10rpx;
+}
+
+.list_price {
+	font-size: 36rpx;
+	color: rgb(255, 0, 0);
+}
+
+.list_time {
+	font-size: 28rpx;
+	letter-spacing: 2rpx;
+	color: rgb(129, 129, 129);
+}

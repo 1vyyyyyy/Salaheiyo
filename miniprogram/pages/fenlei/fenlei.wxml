@@ -1,0 +1,42 @@
+<!-- 导航栏 -->
+<scroll-view scroll-x class="navbar" scroll-with-animation scroll-left="{{scrollLeft}}rpx">
+  <view class="nav-item" wx:for="{{tabs}}"  wx:key="index" bindtap="tabSelect" data-id="{{index}}">
+    <view class="nav-text {{index==tabCur?'tab-on':''}}">{{item._id}}</view>
+  </view>
+</scroll-view>
+<view class="container">
+  <!-- 左边的  -->
+  <scroll-view class='nav_left' scroll-y='true'>
+    <block wx:for="{{lefts}}" wx:key="id">
+      <view class="nav_left_items {{leftCur==index?'active':''}}" bindtap="switchLeftTab" data-index='{{index}}'>
+        {{item._id}}</view>
+    </block>
+  </scroll-view>
+  <!-- 右边的 -->
+  <scroll-view class="nav_right" scroll-y="true">
+    <view class="{{topx}}">
+      <block wx:for="{{rights}}" wx:key="id">
+        <view class="list_box" bindtap="detail" data-id="{{item._id}}">
+                        <image lazy-load class="list_poster" src="{{item.bookinfo.pic}}"></image>
+                        <view class="list_content">
+                              <view class="list_word">
+                                    <view class="list_title text-cut">{{item.bookinfo.title}}
+                                    </view>
+                                    <view class="list_author text-cut">{{item.bookinfo.author}}
+                                    </view>
+                              </view>
+                              <view class="list_between">
+                                    <view class="list_price">￥{{item.price}}.00元</view>
+                                    <!-- <view class="list_time">{{morejs.timelog(item.creat )}}发布
+                                    </view> -->
+                              </view>
+                        </view>
+                  </view>
+        <!-- <view class="nav_right_items" data-id="{{item.bookinfo.title}}">
+          <image src="{{item.bookinfo.pic}}"></image>
+          <text>{{item.bookinfo.title}}</text>
+        </view> -->
+      </block>
+    </view>
+  </scroll-view>
+</view>

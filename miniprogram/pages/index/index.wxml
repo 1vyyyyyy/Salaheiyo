@@ -1,0 +1,79 @@
+<wxs src="../../common.wxs" module="morejs" />
+<view class="top_box">
+      <view class="search_box" bindtap="search">
+            <image class="search_ico" src="/images/search.png"></image>
+            <view class="search_text">搜索想要的书籍，例如：高等数学（上）</view>
+      </view>
+</view>
+<swiper class="banner"  autoplay indicator-active-color="#fbbd08" circular>
+      <block wx:for="{{banner}}" wx:key="id">
+
+         
+            <swiper-item>
+                              <image lazy-load src="/images/QQ20220526231044.png"class="banner_image" />
+                              </swiper-item>
+                                <swiper-item>
+                              <image lazy-load src="/images/QQ20220526232100.png"class="banner_image" />
+                              </swiper-item>
+                              
+            <swiper-item>
+                              <image lazy-load src="/images/20220528193911.png"class="banner_image" />
+                              </swiper-item>
+      </block>
+</swiper>
+
+<view class="{{scrollTop>310?'nofixed':''}}">
+</view>
+<view class="kind_contain {{scrollTop>310?'fixed':''}}">
+      <view class="kind_img" >
+            <image lazy-load src="/images/recommend.png" />
+      </view>
+      <view class="nav-item " >
+            <view class="nav-text">求购推荐</view>
+      </view>
+      
+</view>
+
+
+<view class="background">
+      <block wx:if="{{list.length>0}}">
+            <block wx:for="{{list}}" wx:key="_id">
+                  <view class="list_box " data-id="{{item._id}}">
+                        <view class="list_content card">
+                              <view class="list_word">
+                                    <view class="list_title text-cut">{{item.bookname}}
+                                    </view>
+                                    <view class="list_author text-cut">{{item.notes}}
+                                    </view>
+                              </view>
+                              <view class="list_between">
+                                    <view class="list_time">{{item.gradeid}},{{item.collegeid}}
+                                    </view>
+                                    <view class="bls"><text space="nbsp">        于</text></view>
+                                    <view class="list_time">{{morejs.timelog(item.creat )}}
+                                    </view>
+                                    <view class="bls"><text space="nbsp">发布     </text></view>
+                                    <button type="primary" size="mini" data-wxnum="{{item.wxnum}}" bindtap="copyBtn" style="background-color: #fddb08; float: right;">  联系买家</button>
+                              </view>
+                        </view>
+                  </view>
+            </block>
+      </block>
+</view>
+
+<view class="nocontent" wx:if="{{list.length==0}}">
+      <image lazy-load src="/images/blank.png"></image>
+      <view class="blank_text">这里空空如也~</view>
+</view>
+
+<block wx:if="{{list.length>10}}">
+      <import src="/common.wxml" />
+      <template is="loadmore" data="{{nomore}}" />
+</block>
+<van-transition show="{{ scrollTop>500 }}" custom-class="block" duration="600">
+      <view class="totop" bindtap="gotop">
+            <image  lazy-load src="/images/top.png"></image>
+      </view>
+</van-transition>
+
+<tips />
